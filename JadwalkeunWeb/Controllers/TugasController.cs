@@ -37,6 +37,7 @@ namespace JadwalkeunWeb.Controllers
 			{
 				_ = _db.Tugases.Add(obj);
 				_ = _db.SaveChanges();
+				TempData["success"] = "Success Create";
 				return RedirectToAction("Index");
 			}
 
@@ -71,6 +72,7 @@ namespace JadwalkeunWeb.Controllers
 			{
 				_ = _db.Tugases.Update(obj);
 				_ = _db.SaveChanges();
+				TempData["success"] = "Success Update";
 				return RedirectToAction("Index");
 			}
 
@@ -107,6 +109,7 @@ namespace JadwalkeunWeb.Controllers
 
 			_ = _db.Tugases.Remove(obj);
 			_ = _db.SaveChanges();
+			TempData["success"] = "Success Delete";
 			return RedirectToAction("Index");
 
 
